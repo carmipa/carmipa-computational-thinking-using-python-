@@ -4,7 +4,7 @@ print("************************************")
 print("* Bem vindo ao jogo de Adivinhação *")
 print("************************************")
 
-numeroSecreto = random.random() * 100
+numeroSecreto = round(random.random() * 100) #gera número entre 0.0 e 1.0
 int(numeroSecreto)
 totalTentativas = 3
 
@@ -29,4 +29,4 @@ for rodada in range (1, totalTentativas + 1):
         elif(menor):
             print("Você errou!, seu chute foi menor que o numero secreto." , chute)
     
-print("Fim do jogo")
+print("Fim do jogo! ", "\nA resposta correta éra:", numeroSecreto)
