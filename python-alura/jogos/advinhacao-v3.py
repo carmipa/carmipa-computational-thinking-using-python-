@@ -6,9 +6,9 @@ numeroSecreto = 42
 
 chute = int(input("Digite o seu número:"))
 
-acertou = numeroSecreto == chute
-maior = chute = chute > numeroSecreto
-menor = chute < numeroSecreto
+acertou = chute == numeroSecreto
+maior   = chute <  numeroSecreto
+menor   = chute <  numeroSecreto
 
 if (acertou):
     print("Você acertou, chute!",chute_str)
