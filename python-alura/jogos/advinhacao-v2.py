@@ -10,3 +10,4 @@ if (numeroSecreto == chute_str):
     print("Você acertou, chute!",chute_str)
 else:
     print("Você errou!",chute_str)
+print("Fim do jogo")
