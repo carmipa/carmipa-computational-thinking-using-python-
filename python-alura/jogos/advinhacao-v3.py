@@ -6,7 +6,9 @@ numeroSecreto = 42
 
 chute = int(input("Digite o seu número:"))
 
-if (numeroSecreto == chute):
+acertou = numeroSecreto == chute
+
+if (acertou):
     print("Você acertou, chute!",chute_str)
 else:
     if(chute > numeroSecreto):
