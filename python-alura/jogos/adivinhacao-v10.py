@@ -6,7 +6,19 @@ print("************************************")
 
 numeroSecreto = round(random.randrange(1, 101)) #gera número entre 1 e 100
 int(numeroSecreto)
-totalTentativas = 3
+totalTentativas = 0
+
+print("Qual nível de dificulade?")
+print("(1) Fácil (2) Médio (3) Difícil")
+
+nivel = int(input("Defina o nível: "))
+
+if (nivel == "1"):
+    totalTentativas = 20
+elif(nivel == "2"):
+    totalTentativas = 10
+else:
+    totalTentativas = 5
 
 for rodada in range (1, totalTentativas + 1):
     print("Tentativa {} de {}".format(rodada, totalTentativas))
