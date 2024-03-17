@@ -7,7 +7,7 @@ totalTentativas = 3
 rodada = 1
 
 while (rodada <= totalTentativas):
-    print("Tentativa", rodada, "de", totalTentativas)
+    print("Tentativa 1 de 3", rodada, "de", totalTentativas)
     chute = int(input("Digite o seu número:"))
 
     acertou = chute == numeroSecreto
@@ -25,4 +25,3 @@ while (rodada <= totalTentativas):
         print("Fim do jogo")
     
     rodada = rodada + 1
-
