@@ -4,9 +4,9 @@ print("************************************")
 
 numeroSecreto = 42
 
-chute = input("Digite o seu número:")
+chute_str = int(input("Digite o seu número:"))
 
-if (numeroSecreto == chute):
-    print("Você acertou, chute",chute)
+if (numeroSecreto == chute_str):
+    print("Você acertou, chute!",chute_str)
 else:
-    print("Você errou",chute)
+    print("Você errou!",chute_str)
