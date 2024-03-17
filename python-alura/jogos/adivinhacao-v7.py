@@ -7,7 +7,11 @@ totalTentativas = 3
 
 for rodada in range (1, totalTentativas + 1):
     print("Tentativa {} de {}".format(rodada, totalTentativas))
-    chute = int(input("Digite o seu número:"))
+    chute = int(input("Digite número entre 1 e 100:"))
+
+    if(chute < 1 or chute > 100):
+        print("Você deve digitar um número entre 1 e 100!")
+        continue
 
     acertou = chute == numeroSecreto
     maior   = chute <  numeroSecreto
