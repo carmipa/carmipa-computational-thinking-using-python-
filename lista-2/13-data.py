@@ -16,3 +16,15 @@ else:
 
 if(mes > 0 and mes <= 12):
     ("O mês está correto")
+else:
+    print("mês digitado de forma errada!")
+
+if(ano >0 and ano <= 9999):
+    ("O ano está correto")
+else:
+    print("Ano está digitado de forma incorreta!")
+    
+    
+    
+    
+    
