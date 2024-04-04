@@ -1,18 +1,12 @@
+soma = 0
 
 while True:
-    n1 = 1
-    n2 = 2
-    n3 = 3
-    n4 = 4
-    n5 = 5
-    n6 = 0
+    numero = int(input("Digite um número (0 para encerrar): "))
+    if (numero == 0):
+        break
+    elif(numero %2 == 0):
+        soma += numero
+    else:
+        print("Digite um número inteiro válido")    
 
-    total = n1 + n2 + n3 + n4 + n5 + n6
-
-    print(total)
-    break
-
-
-
-
-
+print("A soma dos números pares é:", soma)
