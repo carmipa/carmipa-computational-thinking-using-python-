@@ -6,19 +6,27 @@ while alunos <= 0:
     print("Digite uma quantidade válida de alunos!")
     alunos = int(input("Quantidade de alunos na classe: "))
 
-# Inicializa a variável para armazenar a soma das notas
-somaNotas = 0
+# Inicializa as variáveis para contagem
+aprovados = 0
+exame = 0
+reprovados = 0
 
-# Coleta as notas dos alunos
+# Coleta as notas dos alunos e faz a contagem
 for i in range(alunos):
     nota = float(input(f"Digite a nota do aluno {i+1}: "))
-    somaNotas += nota
+    if 0 <= nota < 5.0:
+        reprovados += 1
+    elif nota >= 5.0:
+        aprovados += 1
+    else:
+        exame += 1
 
 # Calcula a média das notas
+somaNotas = sum([float(input(f"Digite a nota do aluno {i+1}: ")) for i in range(alunos)])
 media = somaNotas / alunos
 
-# Exibe a média da turma
+# Exibe os resultados
 print(f"A média da turma é: {media:.2f}")
-
-
-
+print(f"Alunos aprovados: {aprovados}")
+print(f"Alunos em exame: {exame}")
+print(f"Alunos reprovados: {reprovados}")
