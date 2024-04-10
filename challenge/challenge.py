@@ -63,6 +63,7 @@ while True:
             # testa as opções do menu
             elif(opcao != 1 or opcao != 2 or opcao != 0):
                 print("Opção inválida! Digite a opção correta!")
+                continue
 
             # quando escolhe o "0" volta ao menu princípal do ssistema
             elif(opcao == 0):
