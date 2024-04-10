@@ -7,7 +7,7 @@ while True:
     print("\n")
     print("1 - Cadastro")
     print("2 - Cadastro de Veiculo")
-    print("3 - Descrição do Defeito")
+    print("3 - Cadastro e descrição do Defeito")
     print("4 - Agendar Oficina")
     print("5 - Orçamento e pagamento")
     print("6 - Pagamento")
@@ -288,6 +288,7 @@ while True:
                 
                 # Exibe os dados do agendamento de um cliente já cadastrado previamente como exemplo
                 if (codigo == cli1 or codigo == cli2 or codigo == cli3):
+                    print("****************************************************************************************************************")
                     print("\n")
                     print("**** Cliente já possui um agendamento cadastrado ****")
                     print("\n")
@@ -296,51 +297,86 @@ while True:
                     print("* Descrição breve do defeito...: Quebra de roda, e perfuração de tanque de combustível com vazamento")
                     print("* Parte do carro afetada.......: Roda dianteira direita e tanque de combustível")
                     print("* Possível problema do carro...: Quebra de rodam, desalinhamento,furo de pneu e tanque de combustível perfurado")
-                    print("Data agendada: 22/05/2024")
-                    print("Periodo do dia: manhã")
-                    print("Hora do dia: 10h a.m.")                    
+                    print("* Data agendada................: 22/05/2024")
+                    print("* Periodo do dia...............: manhã")
+                    print("* Hora do dia..................: 10h a.m.")
+                    print("* Dia..........................: 23")
+                    print("* Mês..........................: 6")
+                    print("* Ano..........................: 2024")                          
                     print("\n")
                     print("****************************************************************************************************************")
                     break
             
             elif(opcao == 2):
-                print("NOVO AGENDAMENTO")
-                print("Escolha o horário de atendimento:")
-                print("1 - Manha")
-                print("2 - tarde")
-                print("\n")
-                periodoAgendamento = int(input("Digite 1 ou 2 para escolher o perido: "))
 
-                if (periodoAgendamento != 1 or periodoAgendamento != 2):
-                    print("Opção inválida! digite a opção correta")
-                
-                horarioAgendamento = int(input("Digite o horário do agendamento (formato 24h, por Ex: 0700 ou 1130): "))
-                print("Atedimento de Segunda a Sábado das 8h as 29h.")
-
-                if (horarioAgendamento >= 8 or horarioAgendamento <= 20):
-                    print("Agendamento feito!")
-                elif(horarioAgendamento < 8 or horarioAgendamento > 20):
-                    print("Horário escolhido não é atendido! escolha um novo horário")
-                
-                print("Digite a data para agendamento: ")
-                diaAgendamento = int(input("Digite o dia (apenas números): "))
-                mesAgendamento = int(input("Digite o mês (apenas números): "))
-                anoAgendamento = int(input("Digite o ano do agendamento (ano com 4 digitos): "))
-
-                if(diaAgendamento >= 1 or diaAgendamento <= 31):
-                    print("Dia agendado")
-                if(mesAgendamento >= 1 or mesAgendamento <-12):
-                    print("Mês agendado")
-                if(anoAgendamento >= 2024):
-                    print("Ano agendado")
-                elif(diaAgendamento < 1 or diaAgendamento > 31):
-                    print("escolha um dia entre 1 e 31!")
-                elif(mesAgendamento < 1 or mesAgendamento > 12):
-                    print("Escolha o mês entre 1 e 12!")
-                elif(anoAgendamento < 2024):
-                    print("Ano escolhido não pode ser menor que 2024!")
-
+                while True:
+                    print("NOVO AGENDAMENTO")
+                    print("\n")
+                    print("Escolha o data/hora do atendimento:")
+                    print("Atedimento de Segunda a Sábado das 8h as 20h.")
+                    print("\n")
                     
+                    print("Escolha o período do dia:")
+                    print("1 - Manha")
+                    print("2 - tarde")
+                    periodoAgendamento = int(input("Digite 1 ou 2 para escolher o perido do dia..........................: "))
+                    # testa o periodo
+                    if(periodoAgendamento == 1 or periodoAgendamento == 2): 
+                        if(periodoAgendamento == 1):
+                            periodoAgendamento = "manhã"
+                            print("Período escolhido manhã")
+                        elif(periodoAgendamento == 2):
+                            print("Período escolhido tarde")
+                            periodoAgendamento = "tarde"
+                    elif(periodoAgendamento != 1 or periodoAgendamento != 2):
+                        print("Opção inválida! digite a opção correta")
+                        continue
+                    
+                    horarioAgendamento = int(input("Digite o horário do agendamento (formato 24h, por Ex: 10 ou 18)......: "))
+                    # testa o hora 
+                    if(horarioAgendamento >= 8 or horarioAgendamento <= 20):
+                        print("Agendamento feito!")
+                    elif(horarioAgendamento < 8 or horarioAgendamento > 20):
+                        print("Horário escolhido não é atendido! escolha um novo horário")
+                        continue
+                    
+                    diaAgendamento = int(input("Digite o dia (apenas números)........................................: "))
+                    # testa o dia                
+                    if(diaAgendamento >= 1 or diaAgendamento <= 31):
+                        print("Dia agendado")
+                    elif(diaAgendamento < 1 or diaAgendamento > 31):
+                        print("escolha um dia entre 1 e 31!")
+                        continue
+                    
+                    mesAgendamento = int(input("Digite o mês (apenas números)........................................: "))
+                    # testa o mês
+                    if(mesAgendamento >= 1 or mesAgendamento <-12):
+                        print("Mês agendado")
+                    elif(mesAgendamento < 1 or mesAgendamento > 12):
+                        print("Escolha o mês entre 1 e 12!")
+                        continue
+
+                    anoAgendamento = int(input("Digite o ano do agendamento (ano com 4 digitos)......................: "))
+                    # testa o ano
+                    if(anoAgendamento >= 2024):
+                        print("Ano agendado")
+                    elif(anoAgendamento < 2024):
+                        print("Ano escolhido não pode ser menor que 2024!")
+                        continue
+
+                    print("\n")
+                    print("*************************************** Agendamento cadastrado com sucesso! ***************************************")
+                    print("\n")
+                    print("* Periodo do dia...............:", periodoAgendamento)
+                    print("* Hora do dia..................:", horarioAgendamento, "h")
+                    print("* Dia..........................:", diaAgendamento)
+                    print("* Mês..........................:", mesAgendamento)
+                    print("* Ano..........................:", anoAgendamento)
+                    print("* Data agendada................:", "dia",diaAgendamento,"/",mesAgendamento,"/",anoAgendamento,"/","as",horarioAgendamento,"horas","no período da,",periodoAgendamento)         
+                    print("\n")
+                    print("*******************************************************************************************************************")
+                    print("\n")    
+                    break                
             # testa as opções do menu
             elif(opcao != 1 or opcao != 2 or opcao != 0):
                 print("Opção inválida! Digite a opção correta!")
