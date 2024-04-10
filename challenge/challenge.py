@@ -239,7 +239,7 @@ while True:
                     break
 
             elif (opcao == 2):
-
+                # exibe os dados cadastrados
                 print("\n")
                 print("CADASTRAR NOVO DEFEITO")
                 print("\n")
@@ -268,7 +268,7 @@ while True:
     elif(opcao == 4):
                 
         while True:
-
+            # cria o menu de agendamento
             print("\n")
             print("AGENDAR AFICINA")
             print("1 - Pesquisar agendamento do cliente")
@@ -308,7 +308,7 @@ while True:
                     break
             
             elif(opcao == 2):
-
+                # cria um novo agendamento
                 while True:
                     print("NOVO AGENDAMENTO")
                     print("\n")
@@ -362,8 +362,8 @@ while True:
                         print("Ano agendado")
                     elif(anoAgendamento < 2024):
                         print("Ano escolhido não pode ser menor que 2024!")
-                        continue
-
+                        
+                    # Mesagem de salvamento e exibição dos dados
                     print("\n")
                     print("*************************************** Agendamento cadastrado com sucesso! ***************************************")
                     print("\n")
