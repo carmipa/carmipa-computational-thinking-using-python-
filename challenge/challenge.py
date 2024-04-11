@@ -10,8 +10,7 @@ while True:
     print("3 - Cadastro e descrição do Defeito")
     print("4 - Agendar Oficina")
     print("5 - Orçamento e pagamento")
-    print("6 - Pagamento")
-    print("7 - Indicar uma Oficina para convênio")
+    print("6 - Indicar uma Oficina para convênio")
     print("0 - Sair")
     print("\n")
     opcao = int(input("Digite a opção desejada: "))
@@ -331,26 +330,80 @@ while True:
                     elif(periodoAgendamento != 1 or periodoAgendamento != 2):
                         print("Opção inválida! digite a opção correta")
                         continue
-                    
-                    horarioAgendamento = int(input("Digite o horário do agendamento (formato 24h, por Ex: 10 ou 18)......: "))
-                    # testa o hora 
-                    if(horarioAgendamento >= 8 or horarioAgendamento <= 20):
-                        print("Agendamento feito!")
-                    elif(horarioAgendamento < 8 or horarioAgendamento > 20):
-                        print("Horário escolhido não é atendido! escolha um novo horário")
-                        continue
-                    
+                        
+                    # escolhe o horário de agendamento                    
+                    print("Escolha a opção desejada de horário: ")
+                    print(" 1 - 08:00h")
+                    print(" 2 - 09:00h")
+                    print(" 3 - 10:00h")
+                    print(" 4 - 11:00h")
+                    print(" 5 - 12:00h")
+                    print(" 6 - 13:00h")
+                    print(" 7 - 14:00h")
+                    print(" 8 - 15:00h")
+                    print(" 9 - 16:00h")
+                    print("10 - 17:00h")
+                    print("11 - 18:00h")
+                    print("12 - 19:00h")
+                    print("13 - 20:00h")
+                    horarioAg = int(input("Escolha a opção desejada: "))
+                    # testa o horário de agendamento
+                    if(horarioAg == 1 or horarioAg == 2 or horarioAg == 3 or horarioAg == 4 or horarioAg == 5 or horarioAg == 6 or horarioAg == 7 or horarioAg == 8 or horarioAg == 9 or horarioAg == 10 or horarioAg == 1 or horarioAg == 12 or horarioAg == 13):
+                        if(horarioAg == 1):
+                            print("Horário agendado para as 08:00h")
+                            horarioAg = "08:00h"
+                        elif(horarioAg == 2):
+                            print("Horário agendado para as 09:00h")
+                            horarioAg = "09:00h"
+                        elif(horarioAg == 3):
+                            print("Horário agendado para as 10:00h")
+                            horarioAg = "10:00h"
+                        elif(horarioAg == 4):
+                            print("Horário agendado para as 11:00h")
+                            horarioAg = "11:00h"
+                        elif(horarioAg == 5):
+                            print("Horário agendado para as 12:00h")
+                            horarioAg = "12:00h"
+                        elif(horarioAg == 6):
+                            print("Horário agendado para as 13:00h")
+                            horarioAg = "13:00h"
+                        elif(horarioAg == 7):
+                            print("Horário agendado para as 14:00h")
+                            horarioAg = "14:00h"
+                        elif(horarioAg == 8):
+                            print("Horário agendado para as 15:00h")
+                            horarioAg = "15:00h"
+                        elif(horarioAg == 9):
+                            print("Horário agendado para as 16:00h")
+                            horarioAg = "16:00h"
+                        elif(horarioAg == 10):
+                            print("Horário agendado para as 17:00h")
+                            horarioAg = "17:00h"
+                        elif(horarioAg == 11):
+                            print("Horário agendado para as 18:00h")
+                            horarioAg = "18:00h"
+                        elif(horarioAg == 12):
+                            print("Horário agendado para as 19:00h")
+                            horarioAg = "19:00h"
+                        elif(horarioAg == 13):
+                            print("Horário agendado para as 820:00h")
+                            horarioAg = "20:00h"
+                    elif(horarioAg != 1 or horarioAg != 2 or horarioAg != 3 or horarioAg != 4 or horarioAg != 5 or horarioAg != 6 or horarioAg != 7 or horarioAg != 8 or horarioAg != 9 or horarioAg != 10 or horarioAg != 1 or horarioAg != 12 or horarioAg != 13):
+                        print("Opção inválida! digite a opção correta")
+                        break
+
                     diaAgendamento = int(input("Digite o dia (apenas números)........................................: "))
                     # testa o dia                
-                    if(diaAgendamento >= 1 or diaAgendamento <= 31):
+                    if(diaAgendamento > 0 or diaAgendamento < 32):
                         print("Dia agendado")
+
                     elif(diaAgendamento < 1 or diaAgendamento > 31):
-                        print("escolha um dia entre 1 e 31!")
-                        continue
+                        print("Opção incorreta escolha um dia entre 1 e 31!")
+                        continue  
                     
                     mesAgendamento = int(input("Digite o mês (apenas números)........................................: "))
                     # testa o mês
-                    if(mesAgendamento >= 1 or mesAgendamento <-12):
+                    if(mesAgendamento >= 1 or mesAgendamento <=12):
                         print("Mês agendado")
                     elif(mesAgendamento < 1 or mesAgendamento > 12):
                         print("Escolha o mês entre 1 e 12!")
@@ -362,17 +415,18 @@ while True:
                         print("Ano agendado")
                     elif(anoAgendamento < 2024):
                         print("Ano escolhido não pode ser menor que 2024!")
-                        
+                        continue
+
                     # Mesagem de salvamento e exibição dos dados
                     print("\n")
                     print("*************************************** Agendamento cadastrado com sucesso! ***************************************")
                     print("\n")
                     print("* Periodo do dia...............:", periodoAgendamento)
-                    print("* Hora do dia..................:", horarioAgendamento, "h")
+                    print("* Hora do dia..................:", horarioAg, "h")
                     print("* Dia..........................:", diaAgendamento)
                     print("* Mês..........................:", mesAgendamento)
                     print("* Ano..........................:", anoAgendamento)
-                    print("* Data agendada................:", "dia",diaAgendamento,"/",mesAgendamento,"/",anoAgendamento,"/","as",horarioAgendamento,"horas","no período da,",periodoAgendamento)         
+                    print("* Data agendada................:", "dia",diaAgendamento,"/",mesAgendamento,"/",anoAgendamento,"/","as",horarioAg,"horas","no período da,",periodoAgendamento)         
                     print("\n")
                     print("*******************************************************************************************************************")
                     print("\n")    
