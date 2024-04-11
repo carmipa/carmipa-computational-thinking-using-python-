@@ -395,28 +395,28 @@ while True:
 
                     diaAgendamento = int(input("Digite o dia (apenas números)........................................: "))
                     # testa o dia                
-                    if(diaAgendamento > 0 or diaAgendamento < 32):
+                    if(diaAgendamento >= 1 and diaAgendamento <= 31):
                         print("Dia agendado")
 
-                    elif(diaAgendamento < 1 or diaAgendamento > 31):
-                        print("Opção incorreta escolha um dia entre 1 e 31!")
-                        continue  
+                    elif(diaAgendamento < 1 and diaAgendamento > 31):
+                        print("Opção incorreta escolha um dia entre 1 e 31!")       
                     
                     mesAgendamento = int(input("Digite o mês (apenas números)........................................: "))
                     # testa o mês
-                    if(mesAgendamento >= 1 or mesAgendamento <=12):
+                    if(mesAgendamento >= 1 and mesAgendamento <=12):
                         print("Mês agendado")
-                    elif(mesAgendamento < 1 or mesAgendamento > 12):
+                    elif(mesAgendamento < 1 and mesAgendamento > 12):
                         print("Escolha o mês entre 1 e 12!")
-                        continue
+                        
 
                     anoAgendamento = int(input("Digite o ano do agendamento (ano com 4 digitos)......................: "))
                     # testa o ano
-                    if(anoAgendamento >= 2024):
+                    if(anoAgendamento > 2023):
                         print("Ano agendado")
                     elif(anoAgendamento < 2024):
                         print("Ano escolhido não pode ser menor que 2024!")
-                        continue
+                        break
+                        
 
                     # Mesagem de salvamento e exibição dos dados
                     print("\n")
