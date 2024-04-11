@@ -397,7 +397,6 @@ while True:
                     # testa o dia                
                     if(diaAgendamento >= 1 and diaAgendamento <= 31):
                         print("Dia agendado")
-
                     elif(diaAgendamento < 1 and diaAgendamento > 31):
                         print("Opção incorreta escolha um dia entre 1 e 31!")       
                     
