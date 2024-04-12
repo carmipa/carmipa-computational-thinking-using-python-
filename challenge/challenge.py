@@ -56,7 +56,7 @@ while True:
                         print("********************************************************************")
                         break
                     # caso não exista um cadastro volta ao menu inicial para escolher o que fazer
-                    elif(codigo != cli1 or codigo != cli2 or codigo != cli3):
+                    else:
                         print("\n")
                         print("Usuário não está cadastrado! Faça o seu cadastro!")
                         print("\n")
@@ -94,7 +94,7 @@ while True:
                 print("*********************************************************************")
             
             # testa as opções do menu
-            elif(opcao != 1 or opcao != 2 or opcao != 0):
+            elif(opcao != 1 and opcao != 2 and opcao != 0):
                 print("\n")
                 print("Opção inválida! Digite a opção correta!")
                 print("\n")
@@ -131,7 +131,7 @@ while True:
 
                     codigo = int(input("Digite o código do cliente: "))
                     # Exibe os dados do veiculo de um cliente já cadastrado previamente como exemplo
-                    if (codigo == cli1 or codigo == cli2 or codigo == cli3):
+                    if (codigo == cli1 and codigo == cli2 and codigo == cli3):
                         print("\n")
                         print("**** Cliente já tem um veiculo cadastrado! Você pode cadastrar um novo veiculo ou voltar ao menu princípal ****")
                         print("\n")
@@ -147,7 +147,7 @@ while True:
                         print("****************************************************************************************************************")
                         break
                     # não havendo veiculo cadastrado retrona uma mensagem de erro
-                    elif(codigo != cli1 or codigo != cli2 or codigo != cli3):
+                    elif(codigo != cli1 and codigo != cli2 and codigo != cli3):
                         print("\n")
                         print("Cliente não possui nenhum veiculo cadastrado! Por favos, cadastre um veiculo.")
                         print("\n")
@@ -180,7 +180,7 @@ while True:
                 print("\n")
             
             # testa as opções do menu
-            elif(opcao != 1 or opcao != 2 or opcao != 0):
+            elif(opcao != 1 and opcao != 2 and opcao != 0):
                 print("Opção inválida! Digite a opção correta!")
                 continue
 
@@ -210,7 +210,7 @@ while True:
                 codigo = int(input("Digite o código do cliente: "))
                 
                 # Exibe os dados do veiculo de um cliente já cadastrado previamente como exemplo
-                if (codigo == cli1 or codigo == cli2 or codigo == cli3):
+                if (codigo == cli1 and codigo == cli2 and codigo == cli3):
                     print("\n")
                     print("**** Cliente já tem um registro de problema anteriormente cadastrado ****")
                     print("\n")
@@ -230,7 +230,7 @@ while True:
                     break
 
                 # não havendo defeito cadastrado retorna uma mensagem de erro
-                elif(codigo != cli1 or codigo != cli2 or codigo != cli3):
+                elif(codigo != cli1 and codigo != cli2 and codigo != cli3):
                     print("\n")
                     print("Cliente não possui defeito veicular cadastrado! Por favor faça uma nova inclusão.")
                     print("\n")
@@ -257,7 +257,7 @@ while True:
                 print("\n")
 
             # testa as opções do menu
-            elif(opcao != 1 or opcao != 2 or opcao != 0):
+            elif(opcao != 1 and opcao != 2 and opcao != 0):
                 print("Opção inválida! Digite a opção correta!")
 
             # quando escolhe o "0" volta ao menu princípal do sistema
@@ -287,12 +287,11 @@ while True:
                 codigo = int(input("Digite o código do cliente: "))
                 
                 # Exibe os dados do agendamento de um cliente já cadastrado previamente como exemplo
-                if (codigo == cli1 or codigo == cli2 or codigo == cli3):
+                if (codigo == cli1 and codigo == cli2 and codigo == cli3):
                     print("****************************************************************************************************************")
                     print("\n")
                     print("**** Cliente já possui um agendamento cadastrado ****")
                     print("\n")
-                    print("* Código.......................: 3")
                     print("* Nome do cliente..............: João Mévio")
                     print("* Descrição breve do defeito...: Quebra de roda, e perfuração de tanque de combustível com vazamento")
                     print("* Parte do carro afetada.......: Roda dianteira direita e tanque de combustível")
@@ -305,7 +304,12 @@ while True:
                     print("* Ano..........................: 2024")                          
                     print("\n")
                     print("****************************************************************************************************************")
-                    break
+                
+                # não havendo agendamento cadastrado retorna uma mensagem de erro
+                elif(codigo != cli1 and codigo != cli2 and codigo != cli3):
+                    print("\n")
+                    print("Cliente não possui nenhum agendamento cadastrado! Por favor faça uma nova inclusão.")
+                    print("\n")
             
             elif(opcao == 2):
                 # cria um novo agendamento
@@ -338,14 +342,177 @@ while True:
                     print("\n")    
                     break                
             # testa as opções do menu
-            elif(opcao != 1 or opcao != 2 or opcao != 0):
+            elif(opcao != 1 and opcao != 2 and opcao != 0):
                 print("Opção inválida! Digite a opção correta!")
 
             # quando escolhe o "0" volta ao menu princípal do sistema
             elif(opcao == 0):
                 break
             break
+    
+    elif(opcao == 5):
+                
+        while True:
+            # cria o menu de Orçamento e Pagamento
+            print("\n")
+            print("ORÇAMENTO E PAGAMENTO")
+            print("1 - Pesquisar Orçamento e pagamento anterior do cliente")
+            print("2 - Novo orçamento e pagamento")
+            print("0 - Menu princípal")
+            print("\n")
+            opcao = int(input("Digite a opção desejada: "))
+            print("\n")
+            
+            if(opcao == 1):
 
-    elif(opcao != 1 or opcao != 2 or opcao != 3 or opcao != 4 or opcao != 5 or opcao != 6 or opcao != 7 or opcao != 0):
+                cli1 = 1
+                cli2 = 2
+                cli3 = 3
+
+                codigo = int(input("Digite o código do cliente: "))
+                
+                # Exibe os dados do agendamento de um cliente já cadastrado previamente como exemplo
+                if (codigo == cli1 or codigo == cli2 or codigo != cli3):
+                    print("****************************************************************************************************************")
+                    print("\n")
+                    print("**** Cliente já possui um orçamento/pagamento cadastrado ****")
+                    print("\n")
+                    print("* Nome do cliente..............: João Mévio")
+                    print("* Descrição breve do defeito...: Quebra de roda, e parabrisa quebrado")
+                    print("* Parte do carro afetada.......: Roda dianteira direita e parabrisa")
+                    print("* Possível problema do carro...: Quebra de rodam, desalinhamento, parabrisaquebrado")
+                    print("* Data agendada................: 22/05/2024")
+                    print("* Partes trocadas..............: roda troca (R$ 899,99) / Parabrisa novo (R$ 934,07), alinhamento (R$ 300,00)")
+                    print("* Valor cobrado................: R$ 2.134,06")
+                    print("* Forma de pagamento...........: PIX")                         
+                    print("\n")
+                    print("****************************************************************************************************************")
+                
+                else:
+                    print("Cliente não possui nenhum orçamento ou pagamento cadastrado! Por favor faça uma nova inclusão")   
+            
+            elif(opcao == 2):
+
+                # cria um orçamento e depois um pagamento
+                print("NOVO ORÇAMENTO / PAGAMENTO")              
+                parteCarro1 = input("Parte do carro 1......................: ")
+                precoParte1 = float(input("Preço...........................: R$ "))
+                parteCarro2 = input("Parte do carro 2......................: ")
+                precoParte2 = float(input("Preço...........................: R$ "))
+                parteCarro3 = input("Parte do carro 3......................: ")
+                precoParte3 = float(input("Preço...........................: R$ "))
+                parteCarro4 = input("Parte do carro 4......................: ")
+                precoParte4 = float(input("Preço...........................: R$ "))
+                maoDeObra = float(input("Valor de mãos de óbras..........: R$ "))
+
+
+                while True:
+                    precoPecas = precoParte1 + precoParte2 + precoParte3 + precoParte4
+                    precoServico = precoPecas + maoDeObra
+                    
+                    desconto10 = precoServico / 10
+                    valorTotalComDesconto10 = desconto10 - precoServico
+                    
+                    desconto5 = (precoServico * 0.05)
+                    valorTotalComDesconto5 = precoServico - desconto5
+                    
+                    # orçamento
+                    print("*************************************** ORÇAMENTO ***************************************")
+                    print("\n")
+                    print("Peças.................: R$",precoPecas)
+                    print("Mão de obra...........: R$",maoDeObra)
+                    print("Valor total...........: R$",precoServico)
+                    print("\n")
+
+                    # opções de pagamento
+                    print("*************************************** PAGAMENTO ***************************************")
+                    print("\n")
+                    print("1 - A vista no débito ou PIX - 10% desconto)")
+                    print("2 - Credito a vista - 5% de desconto")
+                    print("3 - Parcelado em até 10x - não tem desconto")
+                    print("\n")
+                    opcao = int(input("Escolha a forma de pagamento: "))
+
+                    while True: 
+
+                        if(opcao == 1):
+                            print("\n")
+                            print("*************************************** Pagamento feito com sucesso! ***************************************")
+                            print("1 - A vista no débito ou PIX - 10% desconto)")
+                            print("Parte do carro 1......................:",parteCarro1)
+                            print("Peça......................: R$",precoParte1)
+                            print("Parte do carro 2......................:",parteCarro2)
+                            print("Peça......................: R$",precoParte2)
+                            print("Parte do carro 3......................:",parteCarro3)
+                            print("Peça......................: R$",precoParte3)
+                            print("Parte do carro 4......................:",parteCarro4)
+                            print("Peça......................: R$",precoParte4)
+                            print("Total peças...............: R$",precoPecas)
+                            print("Mão de obra...............: R$",maoDeObra)
+                            print("Valor Total sem desconto..: R$",precoServico)
+                            print("Valor de desconto.........: R$",desconto10)
+                            print("Valor total com desconto..: RS",valorTotalComDesconto10)
+                            print("\n")
+                            print("*******************************************************************************************************************")
+                            print("\n")
+                            
+                        
+                        elif(opcao == 2):
+                            print("\n")
+                            print("*************************************** Pagamento feito com sucesso! ***************************************")
+                            print("\n")
+                            print("2 - Credito a vista - 5% de desconto")
+                            print("Parte do carro 1......................:",parteCarro1)
+                            print("Peça......................: R$",precoParte1)
+                            print("Parte do carro 2......................:",parteCarro2)
+                            print("Peça......................: R$",precoParte2)
+                            print("Parte do carro 3......................:",parteCarro3)
+                            print("Peça......................: R$",precoParte3)
+                            print("Parte do carro 4......................:",parteCarro4)
+                            print("Peça......................: R$",precoParte4)
+                            print("Total peças...............: R$",precoPecas)
+                            print("Mão de obra...............: R$",maoDeObra)
+                            print("Valor Total sem desconto..: R$",precoServico)
+                            print("Valor de desconto.........: R$",desconto5)
+                            print("Valor total com desconto..: RS",valorTotalComDesconto5)
+                            print("\n")
+                            print("*******************************************************************************************************************")
+                            print("\n")
+                            
+                        
+                        elif(opcao == 3):
+                            print("\n")
+                            print("*************************************** Pagamento feito com sucesso! ***************************************")
+                            print("\n")
+                            print("3 - Parcelado em até 10x - não tem desconto")
+                            print("Parte do carro 1......................:",parteCarro1)
+                            print("Peça......................: R$",precoParte1)
+                            print("Parte do carro 2......................:",parteCarro2)
+                            print("Peça......................: R$",precoParte2)
+                            print("Parte do carro 3......................:",parteCarro3)
+                            print("Peça......................: R$",precoParte3)
+                            print("Parte do carro 4......................:",parteCarro4)
+                            print("Peça......................: R$",precoParte4)
+                            print("Total peças...............: R$",precoPecas)
+                            print("Mão de obra...............: R$",maoDeObra)
+                            print("Valor Total sem desconto..: R$",precoServico)
+                            print("\n")
+                            print("*******************************************************************************************************************")
+                            print("\n")
+                            
+                        else:#(opcao != 1 or opcao != 2 or opcao != 3):        
+                            print("Opção inválida! Digite a opção correta!")
+                            print("\n")
+                            break
+            
+            # quando escolhe o "0" volta ao menu princípal do sistema
+            elif(opcao == 0):
+                break
+
+            else:#(opcao != 1 and opcao != 2 and opcao != 0):
+                print("Opção inválida! Digite a opção correta!")
+                break
+    
+    elif(opcao != 1 and opcao != 2 and opcao != 3 and opcao != 4 and opcao != 5 and opcao != 6 and opcao != 7 and opcao != 0):
         print("Opção inválida!")
         print("Digite a opção correta!")
