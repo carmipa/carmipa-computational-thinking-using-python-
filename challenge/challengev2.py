@@ -24,9 +24,7 @@ while True:
     print("* 2 - CADASTRAR VEICULOS")
     print("* 3 - OFICINA ON-LINE / AGENDAMENTOS")
     print("* 4 - ORÇAMENTO / PAGAMENTO")
-    print("* 5 - INDICAÇÃO E CADASTRO DE NOVAS OFICINAS")
-    print("* 6 - PESQUISAR DADOS DE UM CLIENTE")
-
+    print("* 5 - PESQUISAR DADOS DE UM CLIENTE")
     print("* 0 - SAIR DO SISTEMA")
     print("*")
     opcao = input("* DIGITE A OPÇÃO DESEJADA: ")
@@ -181,27 +179,145 @@ while True:
             if(opcao == "1"):
                 print("**************************************** ORÇAMENTO / PAGAMENTO ****************************************")
                 print("\n")
-                print("PEÇAS USADAS")
-                input("PEÇAS 1............: ")
-                input("PREÇO: R$..: ")
-                input("PEÇAS 2............: ")
-                input("PREÇO: R$..: ")
-                input("PEÇAS 3............: ")
-                input("PREÇO: R$..: ")
-                
-                
-                
+                print("ORÇAMENTO - PEÇAS")
+                pecas1Pagamento = input ("PEÇAS 1...............: ")
+                valor1Peca = float(input("PREÇO........: R$ "))
+                pecas2Pagamento = input ("PEÇAS 2...............: ")
+                valor2Peca = float(input("PREÇO........: R$ "))
+                pecas3Pagamento = input ("PEÇAS 3...............: ")
+                valor3Peca = float(input("PREÇO........: R$ "))
+                maoDeObra = float(input("MÃO DE OBRA..: R$ "))
 
+                # valor total
+                total = valor1Peca + valor2Peca + valor3Peca + maoDeObra
+                # a vista com 10% de desconto
+                total10 = total / 10
+                aVista = total - total10
+                # crédito com 5% de desconto
+                total5 = (total * 5) / 100
+                credito = total = total5
+                # parcelado em 5x
+                parcelado = total / 5
+                print("\n")
+                print("PAGAMENTO ")
+                print("TOTAL....................................: R$",total)
+                print("A VISTA (10% DESCONTO)...................: R$",aVista)
+                print("NO CRÈDITO (5% DESCONTO).................: R$",credito)
+                print("PARCELADO (5X - SEM DESCONTO)............: R$",parcelado, "5x")
 
+                os.system('cls')
+
+                print(colorama.Fore.RED +"**************************************** ORÇAMENTO / PAGAMENTO REALIZADO COM SUCESSO ****************************************"+ colorama.Style.RESET_ALL)
+
+                print("ORÇAMENTO - PEÇAS")
+                print("PEÇAS 1..................................:",pecas1Pagamento)
+                print("PREÇO....................................: R$",valor1Peca)
+                print("PEÇAS 2..................................:",pecas2Pagamento)
+                print("PREÇO....................................: R$",valor2Peca)
+                print("PEÇAS 3..................................:",pecas3Pagamento)
+                print("PREÇO....................................: R$",valor3Peca)
+                print("MÃO DE OBRA..............................: R$",maoDeObra)
+                print("\n")
+                print("PAGAMENTO ")
+                print("TOTAL....................................: R$",total)
+                print("A VISTA (10% DESCONTO)...................: R$",aVista)
+                print("NO CRÈDITO (5% DESCONTO).................: R$",credito)
+                print("PARCELADO (5X - SEM DESCONTO)............: R$",parcelado, "5x")
+
+            elif(opcao == "0"):
+                break
+            else:
+                print(colorama.Fore.RED +"OPÇÃO INCORRETA. DIGITE O APÇÃO CORRETA!" + colorama.Style.RESET_ALL)
+
+#########################################################################################################################################  
     elif(opcao == "5"):
         os.system('cls')
-        print("**************************************** INDICAÇÃO E CADASTRO DE NOVAS OFICINAS ****************************************")
-    elif(opcao == "6"):
-        os.system('cls')
-        print("**************************************** PESQUISAR DADOS DE UM CLIENTE ****************************************")
+        while True:
+            print("**************************************** PESQUISAR DADOS DE UM CLIENTE ****************************************")
+            print("\n")
+            print("1 - PESQUISAR DADOS DE UM CLIENTE")
+            print("0 - VOLTAR AO MENU ANTERIOR")
+            print("\n")
+            opcao = input("DIGITE A OPÇÃO DESEJADA: ")
+
+            if(opcao == "1"):
+                print("**************************************** PESQUISAR DADOS DE UM CLIENTE ****************************************")
+                # faz a pesquisa se o usuário existe ou não no sistema
+                while True:
+                    # usuário cadastrado para teste:
+                    cli1 = 1
+                    cli2 = 2
+                    cli3 = 3
+
+                    codigo = int(input("DIGITE O CÓDIGO DO CLIENTE: "))
+
+                    # criado um cliente qualquer apenas para efeito de funcionamento de exemplo
+                    if (codigo == cli1 or codigo == cli2 or codigo == cli3):
+                        print("\n")
+                        print(colorama.Fore.RED + "**************************************** O CLIENTE POSSUI CADASTRO ****************************************" +colorama.Style.RESET_ALL)
+                        print("\n")
+                        print("DADOS DO CLIENTE:")
+                        print("NOME:...............: JOÃO MÉVIO")
+                        print("DATA DE NASCIMENTO..: 01/01/1978")
+                        print("PROFISSÃO...........: PADEIRO")
+                        print("CPF.................: 999.999.999.99")
+                        print("NASCIONALIDADE......: BRASILEIRO")
+                        print("RUA.................: BRAUILIO ANTÓNIO")
+                        print("NUMERO..............: 1050")
+                        print("CEP.................: 99999-99")
+                        print("ESTADO..............: RJ")
+                        print("COMPLEMENTO.........: CASA")
+                        print("\n")
+                        print("DADOS DO VEÍCULO:")
+                        print("\n")
+                        print("TIPO DE VEICULO.....: CARRO")
+                        print("FABRICANTE..........: GM")
+                        print("MODELO..............: OMEGA")
+                        print("MOTOR...............: 4.0")
+                        print("COR.................: PRETO-ECLIPSE")
+                        print("ANO DE FABRICAÇÃO...: 2000")
+                        print("PLACA...............: ABCD-586")
+                        print("NOME DO DONO........: JOÃO MÉVIO")
+                        print("\n")
+                        print("PROBLEMAS NO VEÍCULO / AGENDAMENTO")
+                        print("\n")
+                        print("DESCRIÇÃO DO PROBLEMA DO VEICULO............: QUEBRA DE ROD, FURO NO TANQUE DE COMBUSTÍVEL")
+                        print("PARTES AFETADAS.............................: RODA DIANTEIRA ESQUERDA E TANQUE DE COMBUSTÍVEL")
+                        print("DIA DO AGENDAMENTO..........................: 22")
+                        print("MÊS DO AGENDAMENTO..........................: FEVEREIRO")
+                        print("ANO DE AGENDAMENTO..........................: 2025")
+                        print("PERÍODO DO AGENDAMENTO (MANHÃ OU TARDE).....: TARDE")
+                        print("HORÁRIO DE ATENDIMENTO......................: 18H")
+                        print("\n")
+                        print("ORÇAMENTO - PEÇAS")
+                        print("\n")
+                        print("PEÇAS 1..................................: RODA")
+                        print("PREÇO....................................: R$ 1.1900")
+                        print("PEÇAS 2..................................: TANQUE DE COMBUSTÍVEL")
+                        print("PREÇO....................................: R$ 900.00")
+                        print("PEÇAS 3..................................:")
+                        print("PREÇO....................................: R$")
+                        print("MÃO DE OBRA..............................: R$ 500.00")
+                        print("\n")
+                        print("PAGAMENTO ")
+                        print("TOTAL....................................: R$ 3.300")
+                        print("A VISTA (10% DESCONTO)...................: R$ 2.970")
+                        print("NO CRÈDITO (5% DESCONTO).................: R$ 3.135")
+                        print("PARCELADO (5X - SEM DESCONTO)............: R$ 660.00 5x")
+                        break
+                    # caso não exista um cadastro volta ao menu inicial para escolher o que fazer
+                    else:
+                        print("\n")
+                        print(colorama.Fore.RED + "Usuário não está cadastrado! Faça o seu cadastro!"+ colorama.Style.RESET_ALL)
+                        print("\n")
+                        break
+
+
+
+        
     elif(opcao == "0"):
         os.system('cls')
-        print("**************************************** SAIR DO SISTEMA ****************************************")
+        print(colorama.Fore.RED + "**************************************** SAIR DO SISTEMA ****************************************"+colorama.Style.RESET_ALL)
         break
     else:
         print(colorama.Fore.RED + "OPÇÃO INCORRETA. DIGITE O APÇÃO CORRETA!" + colorama.Style.RESET_ALL)
