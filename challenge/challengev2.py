@@ -17,7 +17,6 @@ import colorama
 colorama.init()
 
 while True:
-    os.system('cls')
     print("**************************************** PORTO SEGURO / OFICINA ON-LINE ****************************************")
     print("*")
     print("* 1 - CADASTRAR NOVOS CLIENTES")
@@ -62,7 +61,7 @@ while True:
 
                 print(colorama.Fore.RED +"**************************************** DADOS DO CLIENTE CADASTRADOS COM SUCESSO ****************************************"+ colorama.Style.RESET_ALL)
                 print("\n")
-                print("NOME:...............: ",nomeCliente)
+                print(colorama.Fore.RED +"NOME:...............: ",nomeCliente)
                 print("DATA DE NASCIMENTO..: ",dataNascimento)
                 print("PROFISSÃO...........: ",profissaoCliente)
                 print("CPF.................: ",cpfCliente)
@@ -71,7 +70,7 @@ while True:
                 print("NUMERO..............: ",numeroCliente)
                 print("CEP.................: ",cepCliente)
                 print("ESTADO..............: ",estadoCliente)
-                print("COMPLEMENTO.........: ",complementoCliente)
+                print("COMPLEMENTO.........: ",complementoCliente + colorama.Style.RESET_ALL)
                 print("\n")
 
             elif(opcao == "0"):
@@ -105,14 +104,14 @@ while True:
 
                 print(colorama.Fore.RED +"**************************************** DADOS DO VEICULO CADASTRADOS COM SUCESSO ****************************************"+ colorama.Style.RESET_ALL)
                 print("\n")
-                print("TIPO DE VEICULO.....: ",tipoVeiculo)
+                print(colorama.Fore.RED +"TIPO DE VEICULO.....: ",tipoVeiculo)
                 print("FABRICANTE..........: ",fabricanteVeiculo)
                 print("MODELO..............: ",modeloVeiculo)
                 print("MOTOR...............: ",motorVeiculo)
                 print("COR.................: ",corVeciculo)
                 print("ANO DE FABRICAÇÃO...: ",anoFabricaaoVeiculo)
                 print("PLACA...............: ",placaVeiculo)
-                print("NOME DO DONO........: ",donoVeiculo)
+                print("NOME DO DONO........: ",donoVeiculo + colorama.Style.RESET_ALL)
                 print("\n")
 
             elif(opcao == "0"):
@@ -151,13 +150,14 @@ while True:
 
                 print(colorama.Fore.RED +"**************************************** PROBLEMAS DO VEÍCULO E AGENDAMENTO REALIZADO COM SUCESSO ****************************************"+ colorama.Style.RESET_ALL)
                 print("\n")
-                print("DESCRIÇÃO DO PROBLEMA DO VEICULO............: ",problemaDescricao)
+                print(colorama.Fore.RED +"DESCRIÇÃO DO PROBLEMA DO VEICULO............: ",problemaDescricao)
                 print("PARTES AFETADAS.............................: ",problemasPartes)
                 print("DIA DO AGENDAMENTO..........................: ",problemaDia)
                 print("MÊS DO AGENDAMENTO..........................: ",problemaMes)
                 print("ANO DE AGENDAMENTO..........................: ",problemaAno)
                 print("PERÍODO DO AGENDAMENTO (MANHÃ OU TARDE).....: ",problemaPeriodo)
-                print("HORÁRIO DE ATENDIMENTO......................: ",problemaHorario)
+                print("HORÁRIO DE ATENDIMENTO......................: ",problemaHorario + colorama.Style.RESET_ALL)
+                print("\n")
 
             elif(opcao == "0"):
                 break
@@ -209,7 +209,7 @@ while True:
 
                 print(colorama.Fore.RED +"**************************************** ORÇAMENTO / PAGAMENTO REALIZADO COM SUCESSO ****************************************"+ colorama.Style.RESET_ALL)
 
-                print("ORÇAMENTO - PEÇAS")
+                print(colorama.Fore.RED +"ORÇAMENTO - PEÇAS")
                 print("PEÇAS 1..................................:",pecas1Pagamento)
                 print("PREÇO....................................: R$",valor1Peca)
                 print("PEÇAS 2..................................:",pecas2Pagamento)
@@ -222,7 +222,8 @@ while True:
                 print("TOTAL....................................: R$",total)
                 print("A VISTA (10% DESCONTO)...................: R$",aVista)
                 print("NO CRÈDITO (5% DESCONTO).................: R$",credito)
-                print("PARCELADO (5X - SEM DESCONTO)............: R$",parcelado, "5x")
+                print("PARCELADO (5X - SEM DESCONTO)............: R$",parcelado, "5x"+ colorama.Style.RESET_ALL)
+                print("\n")
 
             elif(opcao == "0"):
                 break
@@ -244,76 +245,71 @@ while True:
                 print("**************************************** PESQUISAR DADOS DE UM CLIENTE ****************************************")
                 # faz a pesquisa se o usuário existe ou não no sistema
                 while True:
-                    # usuário cadastrado para teste:
-                    cli1 = 1
-                    cli2 = 2
-                    cli3 = 3
-
+                    
                     codigo = int(input("DIGITE O CÓDIGO DO CLIENTE: "))
 
                     # criado um cliente qualquer apenas para efeito de funcionamento de exemplo
-                    if (codigo == cli1 or codigo == cli2 or codigo == cli3):
+                    if (codigo == 1 ):
                         print("\n")
                         print(colorama.Fore.RED + "**************************************** O CLIENTE POSSUI CADASTRO ****************************************" +colorama.Style.RESET_ALL)
                         print("\n")
                         print("DADOS DO CLIENTE:")
-                        print("NOME:...............: JOÃO MÉVIO")
-                        print("DATA DE NASCIMENTO..: 01/01/1978")
-                        print("PROFISSÃO...........: PADEIRO")
-                        print("CPF.................: 999.999.999.99")
-                        print("NASCIONALIDADE......: BRASILEIRO")
-                        print("RUA.................: BRAUILIO ANTÓNIO")
-                        print("NUMERO..............: 1050")
-                        print("CEP.................: 99999-99")
-                        print("ESTADO..............: RJ")
+                        print(colorama.Fore.RED +"NOME:...............: JOÃO MÉVIO"+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"DATA DE NASCIMENTO..: 01/01/1978"+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"PROFISSÃO...........: PADEIRO"+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"CPF.................: 999.999.999.99"+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"NASCIONALIDADE......: BRASILEIRO"+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"RUA.................: BRAUILIO ANTÓNIO"+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"NUMERO..............: 1050"+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"CEP.................: 99999-99"+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"ESTADO..............: RJ"+colorama.Style.RESET_ALL)
+                        print("\n")
                         print("COMPLEMENTO.........: CASA")
-                        print("\n")
-                        print("DADOS DO VEÍCULO:")
-                        print("\n")
-                        print("TIPO DE VEICULO.....: CARRO")
-                        print("FABRICANTE..........: GM")
-                        print("MODELO..............: OMEGA")
-                        print("MOTOR...............: 4.0")
-                        print("COR.................: PRETO-ECLIPSE")
-                        print("ANO DE FABRICAÇÃO...: 2000")
-                        print("PLACA...............: ABCD-586")
-                        print("NOME DO DONO........: JOÃO MÉVIO")
+                        print(colorama.Fore.RED +"DADOS DO VEÍCULO:")
+                        print(colorama.Fore.RED +"TIPO DE VEICULO.....: CARRO"+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"FABRICANTE..........: GM"+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"MODELO..............: OMEGA"+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"MOTOR...............: 4.0"+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"COR.................: PRETO-ECLIPSE"+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"ANO DE FABRICAÇÃO...: 2000"+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"PLACA...............: ABCD-586"+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"NOME DO DONO........: JOÃO MÉVIO"+colorama.Style.RESET_ALL)
                         print("\n")
                         print("PROBLEMAS NO VEÍCULO / AGENDAMENTO")
-                        print("\n")
-                        print("DESCRIÇÃO DO PROBLEMA DO VEICULO............: QUEBRA DE ROD, FURO NO TANQUE DE COMBUSTÍVEL")
-                        print("PARTES AFETADAS.............................: RODA DIANTEIRA ESQUERDA E TANQUE DE COMBUSTÍVEL")
-                        print("DIA DO AGENDAMENTO..........................: 22")
-                        print("MÊS DO AGENDAMENTO..........................: FEVEREIRO")
-                        print("ANO DE AGENDAMENTO..........................: 2025")
-                        print("PERÍODO DO AGENDAMENTO (MANHÃ OU TARDE).....: TARDE")
-                        print("HORÁRIO DE ATENDIMENTO......................: 18H")
+                        print(colorama.Fore.RED +"DESCRIÇÃO DO PROBLEMA DO VEICULO............: QUEBRA DE ROD, FURO NO TANQUE DE COMBUSTÍVEL"+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"PARTES AFETADAS.............................: RODA DIANTEIRA ESQUERDA E TANQUE DE COMBUSTÍVEL"+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"DIA DO AGENDAMENTO..........................: 22"+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"MÊS DO AGENDAMENTO..........................: FEVEREIRO"+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"ANO DE AGENDAMENTO..........................: 2025"+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"PERÍODO DO AGENDAMENTO (MANHÃ OU TARDE).....: TARDE"+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"HORÁRIO DE ATENDIMENTO......................: 18H"+colorama.Style.RESET_ALL)
                         print("\n")
                         print("ORÇAMENTO - PEÇAS")
-                        print("\n")
-                        print("PEÇAS 1..................................: RODA")
-                        print("PREÇO....................................: R$ 1.1900")
-                        print("PEÇAS 2..................................: TANQUE DE COMBUSTÍVEL")
-                        print("PREÇO....................................: R$ 900.00")
-                        print("PEÇAS 3..................................:")
-                        print("PREÇO....................................: R$")
-                        print("MÃO DE OBRA..............................: R$ 500.00")
+                        print(colorama.Fore.RED +"PEÇAS 1..................................: RODA"+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"PREÇO....................................: R$ 1.1900"+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"PEÇAS 2..................................: TANQUE DE COMBUSTÍVEL"+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"PREÇO....................................: R$ 900.00"+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"PEÇAS 3..................................: "+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"PREÇO....................................: R$ 0"+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"MÃO DE OBRA..............................: R$ 500.00"+colorama.Style.RESET_ALL)
                         print("\n")
                         print("PAGAMENTO ")
-                        print("TOTAL....................................: R$ 3.300")
-                        print("A VISTA (10% DESCONTO)...................: R$ 2.970")
-                        print("NO CRÈDITO (5% DESCONTO).................: R$ 3.135")
-                        print("PARCELADO (5X - SEM DESCONTO)............: R$ 660.00 5x")
-                        break
+                        print(colorama.Fore.RED +"TOTAL....................................: R$ 3.300"+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"A VISTA (10% DESCONTO)...................: R$ 2.970"+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"NO CRÈDITO (5% DESCONTO).................: R$ 3.135"+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"PARCELADO (5X - SEM DESCONTO)............: R$ 660.00 5x"+colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED +"\n")
+                        print(colorama.Fore.RED + "********************************************************************************"+colorama.Style.RESET_ALL)
                     # caso não exista um cadastro volta ao menu inicial para escolher o que fazer
                     else:
                         print("\n")
-                        print(colorama.Fore.RED + "Usuário não está cadastrado! Faça o seu cadastro!"+ colorama.Style.RESET_ALL)
+                        print(colorama.Fore.RED + "CLIENTE NÃO CADASTRADO, POR FAVOR DIGITE UM CÓDIGO VÁLIDO!"+ colorama.Style.RESET_ALL)
                         print("\n")
                         break
-
-
-
+            elif(opcao == "0"):
+                break
+            else:
+                print(colorama.Fore.RED +"OPÇÃO INCORRETA. DIGITE O APÇÃO CORRETA!" + colorama.Style.RESET_ALL)
         
     elif(opcao == "0"):
         os.system('cls')
