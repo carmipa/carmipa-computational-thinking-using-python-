@@ -8,4 +8,4 @@ cpf = cpf // 1000
 cpf2 = cpf % 1000   
 cpf3 = cpf % 1000
 
-print(cpf".", cpf2 , "." , cpf3 , "-" ,cpf1)
+#print(cpf".", cpf2 , "." , cpf3 , "-" ,cpf1)
