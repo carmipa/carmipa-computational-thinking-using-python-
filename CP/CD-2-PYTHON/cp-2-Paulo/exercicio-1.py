@@ -1,15 +1,25 @@
-numeros1 = int(input("Digite a quantidade de números que você deseja: "))
-soma = 0
 
-while (numeros1 > 0):
-        
-    inteiro1 = int(input(f"Digite {numeros1} números inteiros positivos: "))
+numeroInteiro = int(input("Digite um número inteiro positivo: "))
+
+contaSegmentos = 0
+segmentoAtual = 1
+
+anterior = int(input("Digite o primeiro número: "))
+
+for i in range(numeroInteiro - 1):
+
+    atual = int(input("Digite o próximo número: "))
     
-    if(inteiro1 < 0):
-        print("Número tem de ser positivo")
+    if (atual == anterior):
+        segmentoAtual += 1
     else:
-        soma += inteiro1
-        numeros1 -= 1
+        contaSegmentos += 1
+        segmentoAtual = 1
+    
+    anterior = atual
 
-print(f"A soma de todos os números inteiros é: {soma}")       
+contaSegmentos += 1
+
+print(f"Quantidade de segmentos de números iguais: {contaSegmentos}")
+
 
