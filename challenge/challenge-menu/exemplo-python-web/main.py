@@ -1,4 +1,4 @@
-import flask from Flask, rander_Template
+from flask import Flask, render_template
 
 # explica para flask que a paste tem que ter nome
 
@@ -11,4 +11,4 @@ def home():
     return render_template("index.html")
 
 if __name__=="__main__":
-    app.run = {debug=True}
+    app.run(debug=True)
