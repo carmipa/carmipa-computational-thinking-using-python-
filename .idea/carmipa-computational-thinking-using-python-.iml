@@ -5,6 +5,7 @@
     <orderEntry type="jdk" jdkName="Python 3.12" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
+<<<<<<< HEAD
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Jinja2" />
     <option name="TEMPLATE_FOLDERS">
@@ -13,4 +14,6 @@
       </list>
     </option>
   </component>
+=======
+>>>>>>> 5e0319528b10c4b2e5066e55e207dbfd5bdd1523
 </module>
